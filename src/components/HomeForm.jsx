@@ -11,6 +11,11 @@ export default function HomeForm(){
 
     function calcPrices(event){
         event.preventDefault()
+
+        if (!etanol || !gasolina){
+            alert("Por favor, preencha todos os campos antes de calcular.")
+            return;   
+        }
         const value = parseFloat(etanol)/parseFloat(gasolina)
 
         if(value<=0.7){
